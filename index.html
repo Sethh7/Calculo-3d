@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <form id="form" class="card" autocomplete="off">
+    <h1>Preço de impressão 3D</h1>
+
+    <label>Preço do filamento (R$/kg)
+      <input type="number" id="filamento" min="0" step="0.01" placeholder="120,00">
+    </label>
+
+    <label>Peso utilizado (g)
+      <input type="number" id="peso" min="0" step="0.1" placeholder="85">
+    </label>
+
+    <label>Tempo de impressão (horas)
+      <input type="number" id="tempo" min="0" step="0.01" placeholder="6,5">
+    </label>
+
+    <fieldset>
+      <legend>Bandeira da conta de luz</legend>
+      <div class="flags">
+        <label class="flag verde"><input type="radio" name="bandeira" value="verde" checked><span>Verde</span></label>
+        <label class="flag amarela"><input type="radio" name="bandeira" value="amarela"><span>Amarela</span></label>
+        <label class="flag vermelha"><input type="radio" name="bandeira" value="vermelha"><span>Vermelha</span></label>
+      </div>
+    </fieldset>
+
+    <label>Mão de obra (horas)
+      <input type="number" id="maoHoras" min="0" step="0.01" placeholder="0,5">
+    </label>
+
+    <label>Valor da hora de trabalho (R$)
+      <input type="number" id="maoValor" min="0" step="0.01" placeholder="20,00">
+    </label>
+
+    <label>Desgaste da máquina (R$/hora)
+      <input type="number" id="maquina" min="0" step="0.01" placeholder="1,00">
+    </label>
+
+    <label>Taxa de lucro (%)
+      <input type="number" id="lucro" min="0" step="0.1" placeholder="50">
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="ams">
+      <span>Produto com AMS (×3)</span>
+    </label>
+  </form>
+
+  <aside class="card result">
+    <span class="label">Preço final</span>
+    <strong id="total">R$ 0,00</strong>
+    <dl>
+      <div><dt>Filamento</dt><dd id="rFil">R$ 0,00</dd></div>
+      <div><dt>Energia</dt><dd id="rEn">R$ 0,00</dd></div>
+      <div><dt>Mão de obra</dt><dd id="rMao">R$ 0,00</dd></div>
+      <div><dt>Máquina</dt><dd id="rMaq">R$ 0,00</dd></div>
+      <div><dt>Custo total</dt><dd id="rCusto">R$ 0,00</dd></div>
+      <div><dt>Lucro</dt><dd id="rLucro">R$ 0,00</dd></div>
+      <div><dt>Acréscimo AMS</dt><dd id="rAms">R$ 0,00</dd></div>
+    </dl>
+  </aside>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
